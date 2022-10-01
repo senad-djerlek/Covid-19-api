@@ -3,14 +3,12 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 function App() {
   const [data, setData] = useState([]);
-
   const options = {
     method: "GET",
-    url: "https://worldometer-covid-19.p.rapidapi.com/GetCovidStats",
-    params: { countrycode: "us", date: "Aug 15, 2021" },
+    url: "https://covid-193.p.rapidapi.com/countries",
     headers: {
-      "X-RapidAPI-Key": "4b8b9d22cdmshf90b359350f8235p12bc33jsn0513c1358032",
-      "X-RapidAPI-Host": "worldometer-covid-19.p.rapidapi.com",
+      "X-RapidAPI-Key": "00fe18ac1dmshdffc09875db85d5p1c7676jsnae71a105e5fa",
+      "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
     },
   };
 
@@ -18,8 +16,8 @@ function App() {
     axios
       .request(options)
       .then(function (response) {
-        setData(response.data);
-        console.log(response.data);
+        setData(response.data.response);
+        console.log(response.data.response);
       })
       .catch(function (error) {
         console.error(error);
@@ -29,7 +27,14 @@ function App() {
   useEffect(() => {
     getData();
   }, []);
-  return <div className="App"></div>;
+
+  return (
+    <div className="App">
+      {data.map((el) => (
+        <div key={el.id}>{el}</div>
+      ))}
+    </div>
+  );
 }
 
 export default App;
