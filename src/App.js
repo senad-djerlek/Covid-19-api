@@ -31,9 +31,8 @@ function App() {
   return (
     <div className="App">
       {data.map((el) => (
-        <div key={el.id}>{el}</div>
+        <li key={el.id}>{el}</li>
       ))}
-      <p>hello</p>
     </div>
   );
 }
