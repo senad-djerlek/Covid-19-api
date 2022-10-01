@@ -33,6 +33,7 @@ function App() {
       {data.map((el) => (
         <li key={el.id}>{el}</li>
       ))}
+      <p>Edine Bravo</p>
       <p></p>
     </div>
   );
