@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import axios from "axios";
+import { useEffect, useState } from "react";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [data, setData] = useState([]);
+
+  const options = {
+    method: "GET",
+    url: "https://worldometer-covid-19.p.rapidapi.com/GetCovidStats",
+    params: { countrycode: "us", date: "Aug 15, 2021" },
+    headers: {
+      "X-RapidAPI-Key": "4b8b9d22cdmshf90b359350f8235p12bc33jsn0513c1358032",
+      "X-RapidAPI-Host": "worldometer-covid-19.p.rapidapi.com",
+    },
+  };
+
+  const getData = () => {
+    axios
+      .request(options)
+      .then(function (response) {
+        setData(response.data);
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+  return <div className="App"></div>;
 }
 
 export default App;
