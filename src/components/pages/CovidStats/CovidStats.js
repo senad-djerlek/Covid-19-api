@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { NavLink } from "react-router-dom";
+import { Pagination } from "@mantine/core";
 const CovidStats = () => {
   const [getCovidStats, setGetCovidStats] = useState([]);
   const [getCovidDeaths, setGetCovidDeaths] = useState({});
+  const [activePage, setPage] = useState(1);
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/statistics",
@@ -22,21 +25,41 @@ const CovidStats = () => {
       .catch(function (error) {
         console.error(error);
       });
+
+    // axios
+    //   .get("https://covid-193.p.rapidapi.com/statistics/`${}")
+    //   .then((res) => {
+    //     console.log(res.data.response);
+    //     setGetCovidStats(res.data.response);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
   };
+
+  const perPage = 12;
+
+  const visitedPerPage = (activePage - 1) * perPage;
+
+  const totalPages = Math.ceil(getCovidStats.length / perPage);
 
   useEffect(() => {
     getDataCovidStats();
   }, []);
   return (
     <div>
-      {getCovidStats.map((el) => (
-        <p key={el.id}>
-          <p>
-            Continent Name: {el.continent} Country Name: {el.country}{" "}
-            Population: {el.population}{" "}
+      <NavLink to={"/"}> Click me to go back to homepage</NavLink>
+      {getCovidStats
+        .map((el) => (
+          <p key={el.id}>
+            <p>
+              Continent Name: {el.continent} Country Name: {el.country}{" "}
+              Population: {el.population}{" "}
+            </p>
           </p>
-        </p>
-      ))}
+        ))
+        .slice(visitedPerPage, visitedPerPage + perPage)}
+      <Pagination page={activePage} onChange={setPage} total={totalPages} />
     </div>
   );
 };
