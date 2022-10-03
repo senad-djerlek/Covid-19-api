@@ -1,40 +1,30 @@
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import NavBar from "./components/Navbar/Navbar";
 import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import Box from "@mui/material/Box";
+import classes from "./App.css";
+
 function App() {
-  const [data, setData] = useState([]);
-  const options = {
-    method: "GET",
-    url: "https://covid-193.p.rapidapi.com/countries",
-    headers: {
-      "X-RapidAPI-Key": "00fe18ac1dmshdffc09875db85d5p1c7676jsnae71a105e5fa",
-      "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
-    },
-  };
-
-  const getData = () => {
-    axios
-      .request(options)
-      .then(function (response) {
-        setData(response.data.response);
-        console.log(response.data.response);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   return (
-    <div className="App">
-      {data.map((el) => (
-        <li key={el.id}>{el}</li>
-      ))}
-      <p>Edine Bravo</p>
-      <p></p>
+    <div>
+      <NavBar />
+
+      <Routes>
+        <Route path="/" element={"Home Page"} />
+        <Route path="/about" element={"About us"} />
+        <Route path="/covidstats" element={"Covid Stats"} />
+      </Routes>
+
+      <Box className={classes.footer}>
+        <BottomNavigation
+          style={{
+            backgroundColor: "",
+            color: "white",
+          }}
+        ></BottomNavigation>
+      </Box>
     </div>
   );
 }
