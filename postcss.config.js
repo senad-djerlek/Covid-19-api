@@ -1,9 +1,13 @@
 module.exports = {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> bd2c111 (add navbar)
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     }
+<<<<<<< HEAD
   }
 =======
   plugins: {
@@ -12,3 +16,6 @@ module.exports = {
   },
 }
 >>>>>>> main
+=======
+  }
+>>>>>>> bd2c111 (add navbar)

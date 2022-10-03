@@ -9,10 +9,14 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <App />
 =======
       <App />
 >>>>>>> main
+=======
+    <App />
+>>>>>>> bd2c111 (add navbar)
     </BrowserRouter>
   </React.StrictMode>
 );

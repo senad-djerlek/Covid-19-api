@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 * {
   margin: 0;
   box-sizing: border-box;
@@ -27,3 +28,14 @@ code {
     monospace;
 }
 >>>>>>> main
+=======
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+>>>>>>> bd2c111 (add navbar)
