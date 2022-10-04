@@ -8,7 +8,7 @@ const HomePage = () => {
         <h3>COVID STATS</h3>
         <h3>ABOUT US</h3>
         <form>
-          <input type="search" name="search your state"></input>
+          <input type="search" name=""></input>
         </form>
       </div>
       <NavLink className="no-underline" to={"/stats"}>

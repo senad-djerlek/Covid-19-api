@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { Pagination } from "@mantine/core";
 const CovidStats = () => {
   const [getCovidStats, setGetCovidStats] = useState([]);
-  const [getCovidDeaths, setGetCovidDeaths] = useState({});
   const [activePage, setPage] = useState(1);
   const options = {
     method: "GET",
@@ -54,7 +53,8 @@ const CovidStats = () => {
           <p key={el.id}>
             <p>
               Continent Name: {el.continent} Country Name: {el.country}{" "}
-              Population: {el.population}{" "}
+              Population: {el.population} New Cases:{el.cases.new} Deaths:
+              {el.deaths.total}
             </p>
           </p>
         ))
