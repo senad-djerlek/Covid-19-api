@@ -6,7 +6,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Homepage from "../src/components/pages/HomePage/HomePage";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
-
+import AboutUs from "./components/pages/AboutUs/AboutUs";
 function App() {
   const [data, setData] = useState([]);
   const options = {
@@ -41,6 +41,7 @@ function App() {
         <Routes>
           <Route path={"/"} element={<Homepage />} />
           <Route path={"/stats"} element={<CovidStats />} />
+          <Route path={"/about-us"} element={<AboutUs />}></Route>
         </Routes>
       </main>
 

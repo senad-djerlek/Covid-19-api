@@ -46,7 +46,7 @@ const CovidStats = () => {
     getDataCovidStats();
   }, []);
   return (
-    <div className="my-16">
+    <div className="py-16">
       <NavLink to={"/"}> Click me to go back to homepage</NavLink>
       {getCovidStats
         .map((el) => (
