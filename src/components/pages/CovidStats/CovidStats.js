@@ -47,7 +47,6 @@ const CovidStats = () => {
   }, []);
   return (
     <div>
-<<<<<<< Updated upstream
       <NavLink to={"/"}> Click me to go back to homepage</NavLink>
       {getCovidStats
         .map((el) => (
@@ -60,11 +59,9 @@ const CovidStats = () => {
           </p>
         ))
         .slice(visitedPerPage, visitedPerPage + perPage)}
-      <Pagination page={activePage} onChange={setPage} total={totalPages} />
-=======
+      <Pagination page={activePage} onChange={setPage} total={totalPages} />{" "}
       <p>Covid Stats</p>
       <h2>smao naslov</h2>
->>>>>>> Stashed changes
     </div>
   );
 };
