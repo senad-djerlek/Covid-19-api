@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import CovidStats from "./components/pages/CovidStats/CovidStats";
 import { Link, Route, Routes } from "react-router-dom";
 import Homepage from "../src/components/pages/HomePage/HomePage";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   const [data, setData] = useState([]);
   const options = {
@@ -33,10 +36,15 @@ function App() {
 
   return (
     <div>
-      <Routes>
-        <Route path={"/"} element={<Homepage />} />
-        <Route path={"/stats"} element={<CovidStats />} />
-      </Routes>
+      <NavBar />
+      <main style={{ minHeight: "80vh" }}>
+        <Routes>
+          <Route path={"/"} element={<Homepage />} />
+          <Route path={"/stats"} element={<CovidStats />} />
+        </Routes>
+      </main>
+
+      <Footer />
     </div>
   );
 }
