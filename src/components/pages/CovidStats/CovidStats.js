@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { Pagination } from "@mantine/core";
 const CovidStats = () => {
   const [getCovidStats, setGetCovidStats] = useState([]);
-  const [getCovidDeaths, setGetCovidDeaths] = useState({});
   const [activePage, setPage] = useState(1);
   const options = {
     method: "GET",
@@ -48,23 +47,21 @@ const CovidStats = () => {
   }, []);
   return (
     <div>
-<<<<<<< Updated upstream
       <NavLink to={"/"}> Click me to go back to homepage</NavLink>
       {getCovidStats
         .map((el) => (
           <p key={el.id}>
             <p>
               Continent Name: {el.continent} Country Name: {el.country}{" "}
-              Population: {el.population}{" "}
+              Population: {el.population} New Cases:{el.cases.new} Deaths:
+              {el.deaths.total}
             </p>
           </p>
         ))
         .slice(visitedPerPage, visitedPerPage + perPage)}
-      <Pagination page={activePage} onChange={setPage} total={totalPages} />
-=======
+      <Pagination page={activePage} onChange={setPage} total={totalPages} />{" "}
       <p>Covid Stats</p>
       <h2>smao naslov</h2>
->>>>>>> Stashed changes
     </div>
   );
 };
