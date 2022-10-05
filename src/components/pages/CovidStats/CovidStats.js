@@ -39,7 +39,7 @@ const CovidStats = () => {
   const perPage = 12;
 
   const visitedPerPage = (activePage - 1) * perPage;
-  
+
   const totalPages = Math.ceil(getCovidStats.length / perPage);
 
   useEffect(() => {
