@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import CoronavirusIcon from "@mui/icons-material/Coronavirus";
 const NavBar = () => {
   return (
     <>
@@ -15,7 +16,7 @@ const NavBar = () => {
           to={"/"}
           className="absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
         >
-          Covid-19
+          <CoronavirusIcon> </CoronavirusIcon> Covid-19
         </NavLink>
         <form className="">
           <input
