@@ -11,7 +11,7 @@ const NavBar = () => {
           to={"/homepage"}
           className="absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
         >
-          Covid-19 stats
+          Covid-19 statsasdas
         </NavLink>
         <div className="flex gap-5 text-lg text-white">
           <NavLink to={"/stats"}>COVID STATS</NavLink>
