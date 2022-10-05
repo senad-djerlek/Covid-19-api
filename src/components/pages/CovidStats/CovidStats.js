@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { Pagination } from "@mantine/core";
 const CovidStats = () => {
   const [getCovidStats, setGetCovidStats] = useState([]);
   const [activePage, setPage] = useState(1);
@@ -59,9 +58,9 @@ const CovidStats = () => {
           </p>
         ))
         .slice(visitedPerPage, visitedPerPage + perPage)}
-      <Pagination page={activePage} onChange={setPage} total={totalPages} />{" "}
+      {/* <Pagination page={activePage} onChange={setPage} total={totalPages} />{" "} */}
       <p>Covid Stats</p>
-      <h2>smao naslov</h2>
+      <h2>smao jhionaslov</h2>
     </div>
   );
 };
