@@ -37,7 +37,7 @@ function App() {
   return (
     <div>
       <NavBar />
-      <main style={{ minHeight: "80vh" }}>
+      <main style={{ minHeight: "80vh", backgroundColor: "#8d99ae" }}>
         <Routes>
           <Route path={"/"} element={<Homepage />} />
           <Route path={"/stats"} element={<CovidStats />} />
