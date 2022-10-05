@@ -15,7 +15,7 @@ const NavBar = () => {
           to={"/"}
           className="absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
         >
-          Covid-19
+          Covid-19 asd
         </NavLink>
         <form className="">
           <input
