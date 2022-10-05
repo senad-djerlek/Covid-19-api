@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { NavLink } from "react-router-dom";
-import { Pagination } from "@mantine/core";
+
 const CovidStats = () => {
   const [getCovidStats, setGetCovidStats] = useState([]);
   const [activePage, setPage] = useState(1);
