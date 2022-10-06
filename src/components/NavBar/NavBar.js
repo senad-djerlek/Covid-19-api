@@ -8,23 +8,26 @@ const NavBar = () => {
         className="   flex justify-end items-center p-2 w-full m-auto gap-12 relative"
         style={{
           height: "10vh",
-          backgroundColor: "#2b2d42",
+          backgroundColor: "white",
           fontFamily: "Open Sans",
         }}
       >
         <NavLink
           to={"/"}
-          className="absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
+          className="flex absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
         >
-          <CoronavirusIcon> </CoronavirusIcon> Covid-19
+          <img
+            className="w-25 h-20"
+            src="https://binhphuoc.gov.vn/uploads/binhphuoc/news/2021_06/covid19.png"
+          ></img>
         </NavLink>
         <form className="">
           <input
-            className="border-1 border-black rounded-lg mr-2"
+            className="border-2 border-black rounded-lg mr-2"
             type="search"
           ></input>
         </form>
-        <div className="flex gap-5 text-lg text-white">
+        <div className="flex gap-5 text-xl text-black">
           <NavLink to={"/stats"}>COVID STATS</NavLink>
           <NavLink to={"/about-us"}>ABOUT US</NavLink>
         </div>
