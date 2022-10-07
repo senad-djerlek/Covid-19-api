@@ -6,8 +6,8 @@ import { NavLink } from "react-router-dom";
 const Footer = () => {
   return (
     <div style={{ height: "10vh", backgroundColor: "#edf2f4" }}>
-      <div className="flex flex-col p-10 justify-center h-48 bg-blue-900 text-white  ">
-        <div className="flex justify-center gap-5">
+      <div className="flex flex-col p-10 justify-center h-48 bg-white text-black  ">
+        <div className="flex justify-center gap-5 bg-white">
           <FacebookIcon />
           <InstagramIcon />
           <TwitterIcon />
