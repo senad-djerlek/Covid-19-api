@@ -29,6 +29,7 @@ const NavBar = () => {
         </form>
         <div className="flex gap-5 text-xl text-black">
           <NavLink to={"/stats"}>COVID STATS</NavLink>
+          <NavLink to={"/country-stats"}>COUNTRY STATS</NavLink>
           <NavLink to={"/about-us"}>ABOUT US</NavLink>
         </div>
       </div>
