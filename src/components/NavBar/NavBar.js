@@ -24,18 +24,16 @@ const NavBar = () => {
             border="0"
           ></img>
         </NavLink>
-        {/* <form className="mr-80 w-60">
-          <Autocomplete
-            disablePortal
-            id="combo-box-demo"
-            // options={top100Films}
-            sx={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Countries" />}
-          />
-        </form> */}
-        <div className="flex gap-5 text-2xl text-black mr-10 ">
-          <NavLink className="covid" to={"/stats"}>COVID STATS</NavLink>
-          <NavLink className="about" to={"/about-us"}>ABOUT US</NavLink>
+        <form className="">
+          <input
+            className="border-2 border-black rounded-lg mr-2"
+            type="search"
+          ></input>
+        </form>
+        <div className="flex gap-5 text-xl text-black">
+          <NavLink to={"/stats"}>COVID STATS</NavLink>
+          <NavLink to={"/country-stats"}>COUNTRY STATS</NavLink>
+          <NavLink to={"/about-us"}>ABOUT US</NavLink>
         </div>
       </div>
     </>

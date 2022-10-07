@@ -7,6 +7,8 @@ const HomePage = () => {
         className="w-full"
         src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
         // style={{ objectFit: "contain" }}
+
+        
       ></img>
     </div>
   );
