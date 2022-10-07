@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import CoronavirusIcon from "@mui/icons-material/Coronavirus";
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 const NavBar = () => {
   return (
     <>
@@ -17,19 +18,24 @@ const NavBar = () => {
           className="flex absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
         >
           <img
-            className="w-25 h-20"
-            src="https://binhphuoc.gov.vn/uploads/binhphuoc/news/2021_06/covid19.png"
+            className="w-25 h-20 ml-10"
+            src="https://iili.io/QOYltf.md.png"
+            alt="QOYltf.md.png"
+            border="0"
           ></img>
         </NavLink>
-        <form className="">
-          <input
-            className="border-2 border-black rounded-lg mr-2"
-            type="search"
-          ></input>
-        </form>
-        <div className="flex gap-5 text-xl text-black">
-          <NavLink to={"/stats"}>COVID STATS</NavLink>
-          <NavLink to={"/about-us"}>ABOUT US</NavLink>
+        {/* <form className="mr-80 w-60">
+          <Autocomplete
+            disablePortal
+            id="combo-box-demo"
+            // options={top100Films}
+            sx={{ width: 300 }}
+            renderInput={(params) => <TextField {...params} label="Countries" />}
+          />
+        </form> */}
+        <div className="flex gap-5 text-2xl text-black mr-10 ">
+          <NavLink className="covid" to={"/stats"}>COVID STATS</NavLink>
+          <NavLink className="about" to={"/about-us"}>ABOUT US</NavLink>
         </div>
       </div>
     </>
