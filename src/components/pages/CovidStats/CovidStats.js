@@ -7,7 +7,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 const CovidStats = () => {
-  const [getCovidStats, setGetCovidStats] = useState([]);
+  const [covidStats, setCovidStats] = useState([]);
   const [activePage, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
@@ -25,7 +25,7 @@ const CovidStats = () => {
     axios
       .request(options)
       .then(function (response) {
-        setGetCovidStats(response.data.response);
+        setCovidStats(response.data.response);
         console.log(response.data.response);
       })
       .catch(function (error) {
@@ -47,7 +47,7 @@ const CovidStats = () => {
 
   const visitedPerPage = (activePage - 1) * perPage;
 
-  const totalPages = Math.ceil(getCovidStats.length / perPage);
+  const totalPages = Math.ceil(covidStats.length / perPage);
 
   useEffect(() => {
     getDataCovidStats();
@@ -55,9 +55,9 @@ const CovidStats = () => {
   return (
     <div className="py-16">
       <NavLink to={"/"}> Click me to go back to homepage</NavLink>
-      {getCovidStats
+      {covidStats
         .map((el) => (
-          <ul key={el.id}>
+          <ul key={el.country}>
             <li>
               Continent Name: {el.continent} Country Name: {el.country}{" "}
               Population: {el.population} New Cases:{el.cases.new} Deaths:
