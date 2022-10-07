@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import CoronavirusIcon from "@mui/icons-material/Coronavirus";
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 const NavBar = () => {
   return (
     <>
@@ -17,8 +18,10 @@ const NavBar = () => {
           className="flex absolute left-6 text-3xl  md:text-4xl font-bold mb-3 text-white "
         >
           <img
-            className="w-25 h-20"
-            src="https://binhphuoc.gov.vn/uploads/binhphuoc/news/2021_06/covid19.png"
+            className="w-25 h-20 ml-10"
+            src="https://iili.io/QOYltf.md.png"
+            alt="QOYltf.md.png"
+            border="0"
           ></img>
         </NavLink>
         <form className="">

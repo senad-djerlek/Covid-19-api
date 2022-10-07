@@ -5,7 +5,7 @@ const HomePage = () => {
     <div className="h-screen w-full">
       <img
         className="w-full"
-        src="https://storage.googleapis.com/proudcity/jacksonms/uploads/2020/06/NWHN_Web_Banner_Covid19_FINAL.png"
+        src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
         // style={{ objectFit: "contain" }}
 
         
