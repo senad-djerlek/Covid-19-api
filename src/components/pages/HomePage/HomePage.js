@@ -7,6 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { padding, style } from "@mui/system";
+import "../../../App.css"
 
 const HomePage = () => {
   const [covidWorldStats, setCovidWorldStats] = useState([]);
@@ -46,18 +47,20 @@ const HomePage = () => {
         ></img>
         <h1
           className="flex justify-center pb-10 font-bold text-2xl pt-6"
-          style={{ color: " #880808 ", fontSize: "34px" }}
+          style={{ color: " #880808 ", fontSize: "40px" , fontFamily: "Open Sans"}}
         >
           World Stats
         </h1>
         <div className="flex justify-center gap-10 ">
           <div
-            className="flex justify-center items-center"
+            className="kartice flex justify-center items-center"
             style={{
-              height: "15vh",
-              width: "20vh",
-              border: "2px solid #880808 ",
-              borderRadius: "20px",
+              height: "20vh",
+              width: "40vh",
+              border: "0.8px solid black",
+              borderRadius: "7px",
+              cursor: "default"
+
             }}
           >
             <div style={{ fontSize: "20px" }}>
@@ -71,12 +74,13 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            className="flex justify-center items-center"
+            className="kartice flex justify-center items-center"
             style={{
-              height: "15vh",
-              width: "20vh",
-              border: "2px solid #880808 ",
-              borderRadius: "20px",
+              height: "20vh",
+              width: "40vh",
+              border: "0.8px solid black ",
+              borderRadius: "7px",
+              cursor: "default",
             }}
           >
             <div style={{ fontSize: "20px" }}>
@@ -90,12 +94,13 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            className="flex justify-center items-center"
+            className="kartice flex justify-center items-center"
             style={{
-              height: "15vh",
-              width: "20vh",
-              border: "2px solid #880808 ",
-              borderRadius: "20px",
+              height: "20vh",
+              width: "40vh",
+              border: "0.8px solid black ",
+              borderRadius: "7px",
+              cursor: "default",
             }}
           >
             <div style={{ fontSize: "20px" }}>
@@ -109,12 +114,12 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            className="flex justify-center items-center"
+            className="kartice flex justify-center items-center"
             style={{
-              height: "15vh",
-              width: "20vh",
-              border: "2px solid #880808 ",
-              borderRadius: "20px",
+              height: "20vh",
+              width: "40vh",
+              border: "0.8px solid black ",
+              borderRadius: "7px",
             }}
           >
             <NavLink to={"/country-stats"} style={{ fontSize: "20px" }}>
