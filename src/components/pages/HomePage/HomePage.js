@@ -114,7 +114,7 @@ const HomePage = () => {
             </div>
           </div>
           <div
-            className="kartice flex justify-center items-center"
+            className="kartica4 flex justify-center items-center"
             style={{
               height: "20vh",
               width: "40vh",
@@ -122,7 +122,7 @@ const HomePage = () => {
               borderRadius: "7px",
             }}
           >
-            <NavLink to={"/country-stats"} style={{ fontSize: "20px" }}>
+            <NavLink className="countryStats" to={"/country-stats"} style={{ fontSize: "25px" ,fontWeight: "bold" }}>
               Country Stats
             </NavLink>
           </div>

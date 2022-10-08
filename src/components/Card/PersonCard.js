@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 
 function PersonCard({ imageURL, name, occupation, coverURL, description }) {
   return (
-    <Card sx={{ width: 305, m: 2 }}>
+    <Card className="aboutCard" sx={{ width: 305, m: 2 }}>
       <CardHeader
         avatar={<Avatar alt="Avatar" src={imageURL} />}
         title={name}

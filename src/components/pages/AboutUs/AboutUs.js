@@ -13,7 +13,7 @@ const AboutUs = () => {
         <br /> You can see about our team below.
       </h3>
       {persons.map((person) => (
-        <PersonCard
+        <PersonCard 
           imageURL={person.imageURL}
           name={person.name}
           occupation={person.occupation}

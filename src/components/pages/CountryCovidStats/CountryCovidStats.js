@@ -115,6 +115,7 @@ function CountryCovidStats() {
       .catch(function (error) {
         console.error(error);
       });
+      window.scrollTo(0,0);
   }, [countryName.name, countryName.date]);
   return (
     <div className="grid grid-row-2 bg-white mt-3 h-screen">
