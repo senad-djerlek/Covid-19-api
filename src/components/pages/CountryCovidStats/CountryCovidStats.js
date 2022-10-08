@@ -10,8 +10,14 @@ const justDay =
   new Date().getDate() > 10
     ? new Date().getDate()
     : "0".concat(new Date().getDate());
-const onThisDay =
-  new Date().getFullYear() + "-" + (new Date().getMonth() + 1) + "-" + justDay;
+
+const justMonth =
+  new Date().getMonth() >= 10
+    ? new Date().getMonth()
+    : new Date().getMonth() == 9
+    ? "10"
+    : "0".concat(new Date().getMonth() + 1);
+const onThisDay = new Date().getFullYear() + "-" + justMonth + "-" + justDay;
 
 //component
 function CountryCovidStats() {
@@ -28,20 +34,22 @@ function CountryCovidStats() {
   });
   // console.log("countryName", countryName);
   // console.log("cases", countryData);
-  console.log("countryName", countryName);
+  console.log("countryName from CountryStats", countryName);
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
+    timeout: 3000,
     params: { country: countryName.name, day: countryName.date },
     // params: { country: countryName.name },
     headers: {
       "X-RapidAPI-Key": "e0d331ecf0msh511ca18a17a79e5p1481dfjsna27313c7f6c9",
       "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
     },
+    clarifyTimeoutError: false,
   };
   useEffect(() => {
     axios
-      .request(options)
+      .request(options, { date: countryName.date })
       .then(function (response) {
         // console.log(
         //   "response",
@@ -108,12 +116,29 @@ function CountryCovidStats() {
           total_active: "",
         });
 
-        setCountryData(seconArr);
+        console.log(
+          "Object.keys(seconArr).length",
+          response.data.response.length
+        );
+        response.data.response.length
+          ? setCountryData(seconArr)
+          : setCountryData({
+              new_cases: "no-data",
+              new_death: "no-data",
+              new_recovered: "no-data",
+              total_active: "no-data",
+            });
 
         // console.log("countryData45454", countryData.cases);
       })
       .catch(function (error) {
         console.error(error);
+        setCountryData({
+          new_cases: "no-data",
+          new_death: "no-data",
+          new_recovered: "no-data",
+          total_active: "no-data",
+        });
       });
       window.scrollTo(0,0);
   }, [countryName.name, countryName.date]);

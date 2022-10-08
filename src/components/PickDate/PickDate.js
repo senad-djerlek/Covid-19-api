@@ -10,7 +10,7 @@ import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
 import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
 
 const justDay =
-  new Date().getDate() > 10
+  new Date().getDate() >= 10
     ? new Date().getDate()
     : "0".concat(new Date().getDate());
 
@@ -32,9 +32,9 @@ export default function MaterialUIPickers({ dateFunc }) {
     const justDateLike =
       newValue.$d.getDate() >= 10
         ? newValue.$d.getDate()
-        : newValue.$d.getDate() == 9
-        ? "10"
-        : "0".concat(newValue.$d.getDate());
+        : // : newValue.$d.getDate() == 9
+          // ? "10"
+          "0".concat(newValue.$d.getDate());
     const justMonthLike =
       newValue.$d.getMonth() >= 10
         ? newValue.$d.getMonth()
