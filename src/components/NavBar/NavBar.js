@@ -25,7 +25,7 @@ const NavBar = () => {
           ></img>
         </NavLink>
 
-        <div className="flex gap-5 text-xl text-black">
+        <div className="flex gap-5 text-xl text-black pr-9">
           <NavLink to={"/stats"}>COVID STATS</NavLink>
           <NavLink to={"/country-stats"}>COUNTRY STATS</NavLink>
           <NavLink to={"/about-us"}>ABOUT US</NavLink>

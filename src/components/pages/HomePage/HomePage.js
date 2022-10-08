@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
-import { padding } from "@mui/system";
+import { padding, style } from "@mui/system";
 
 const HomePage = () => {
   const [covidWorldStats, setCovidWorldStats] = useState([]);
@@ -44,73 +44,82 @@ const HomePage = () => {
           src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
           // style={{ objectFit: "contain" }}
         ></img>
-        <div className="flex justify-center gap-10">
+        <h1
+          className="flex justify-center pb-10 font-bold text-2xl pt-6"
+          style={{ color: " #880808 ", fontSize: "34px" }}
+        >
+          World Stats
+        </h1>
+        <div className="flex justify-center gap-10 ">
           <div
             className="flex justify-center items-center"
             style={{
-              color: "white",
               height: "15vh",
               width: "20vh",
-              backgroundColor: "#880808",
               border: "2px solid #880808 ",
               borderRadius: "20px",
             }}
           >
-            Recovered:
-            <br></br>
-            {covidWorldStats.reduce(
-              (prev, curr) => (prev += curr?.cases?.recovered || 0),
-              0
-            )}
+            <div style={{ fontSize: "20px" }}>
+              Recovered:
+              <div className="font-bold" style={{ color: "green" }}>
+                {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.cases?.recovered || 0),
+                  0
+                )}
+              </div>
+            </div>
           </div>
           <div
             className="flex justify-center items-center"
             style={{
-              color: "white",
               height: "15vh",
               width: "20vh",
-              backgroundColor: "#880808",
               border: "2px solid #880808 ",
               borderRadius: "20px",
             }}
           >
-            Deaths:
-            <br></br>
-            {covidWorldStats.reduce(
-              (prev, curr) => (prev += curr?.deaths?.total || 0),
-              0
-            )}
+            <div style={{ fontSize: "20px" }}>
+              Deaths:
+              <div className="font-bold" style={{ color: "red" }}>
+                {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.deaths?.total || 0),
+                  0
+                )}
+              </div>
+            </div>
           </div>
           <div
             className="flex justify-center items-center"
             style={{
-              color: "white",
               height: "15vh",
               width: "20vh",
-              backgroundColor: "#880808",
               border: "2px solid #880808 ",
               borderRadius: "20px",
             }}
           >
-            ActiveCases:
-            <br></br>
-            {covidWorldStats.reduce(
-              (prev, curr) => (prev += curr?.cases?.active || 0),
-              0
-            )}
+            <div style={{ fontSize: "20px" }}>
+              ActiveCases:
+              <div className="font-bold" style={{ color: "blue" }}>
+                {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.cases?.active || 0),
+                  0
+                )}
+              </div>
+            </div>
           </div>
           <div
             className="flex justify-center items-center"
             style={{
-              color: "white",
               height: "15vh",
               width: "20vh",
-              backgroundColor: "#880808",
               border: "2px solid #880808 ",
               borderRadius: "20px",
             }}
           >
-            <NavLink to={"/country-stats"}>View Countries</NavLink>
+            <NavLink to={"/country-stats"} style={{ fontSize: "20px" }}>
+              Country Stats
+            </NavLink>
           </div>
         </div>
       </div>

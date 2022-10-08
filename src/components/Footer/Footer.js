@@ -12,13 +12,17 @@ const Footer = () => {
           <InstagramIcon />
           <TwitterIcon />
         </div>
-        <div className="flex justify-center gap-5 pt-5">
-          <NavLink to={"/About"}>Info</NavLink>
-          <p>Terms of use</p>
-          <p>Privacy policy</p> <br></br>
+        <div
+          className="flex justify-center gap-5 pt-5"
+          style={{ color: "red", cursor: "pointer", fontSize: "19px" }}
+        >
+          <NavLink to={"/stats"}>Covid Stats</NavLink>
+          <NavLink to={"/about-us"}>About us</NavLink> <br></br>
         </div>
         <div className="flex justify-center pt-5">
-          <p>© 2022 Online Shop Coorporation</p>
+          <p style={{ color: "red", fontSize: "20px", cursor: "default" }}>
+            © Covid 19 Coorporation
+          </p>
         </div>
       </div>
     </div>
