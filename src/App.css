@@ -9,8 +9,7 @@
   cursor: pointer;
   transition: 0.1s;
 }
-
-.covid, .about {
-    text-shadow: 2px 2px 4px #000000;
-    
+.covid,
+.about {
+  text-shadow: 2px 2px 4px #000000;
 }
