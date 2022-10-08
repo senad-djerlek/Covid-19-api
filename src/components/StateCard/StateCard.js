@@ -36,7 +36,7 @@ export default function StateCard({
                 {new_death}
               </span>
               <span className="inline-block text-base text-gray-500 font-medium text-center">
-                New Death{" "}
+                New Deaths{" "}
               </span>
             </h4>
             <h4 className="text-xl grid grid-rows-2  bg-white rounded-lg pt-3 pb-3">
@@ -44,7 +44,7 @@ export default function StateCard({
                 {new_recovered}
               </span>
               <span className="inline-block text-base text-gray-500 font-medium text-center">
-                New Recover{" "}
+                New Recovered{" "}
               </span>
             </h4>
           </div>

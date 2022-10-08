@@ -33,6 +33,7 @@ const HomePage = () => {
     getDataCovidStats();
   }, []);
 
+  console.log();
   return (
     <>
       <div className="bg-cover">
@@ -47,10 +48,30 @@ const HomePage = () => {
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Active
-                {covidWorldStats.map((el) => (
-                  <p key={el.id}>{el.cases.active}</p>
-                ))}
+                Active:
+                {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.cases?.active || 0),
+                  0
+                )}
+              </Typography>
+
+              <Typography variant="body2" color="text.secondary"></Typography>
+            </CardContent>
+          </CardActionArea>
+          <CardActions></CardActions>
+        </Card>
+        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
+          <CardActionArea>
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="div">
+                Deaths:
+                {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.deaths?.total || 0),
+                  0
+                )}
+                {/* {covidWorldStats.map((el) => (
+                  <p key={el.id}></p>
+                ))} */}
               </Typography>
               <Typography variant="body2" color="text.secondary"></Typography>
             </CardContent>
@@ -61,24 +82,17 @@ const HomePage = () => {
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Deaths
-                {covidWorldStats.map((el) => (
-                  <p key={el.id}>{el.deaths.total}</p>
-                ))}
-              </Typography>
-              <Typography variant="body2" color="text.secondary"></Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions></CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Recovered
-                {covidWorldStats.map((el) => (
+                Recovered:
+                {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.cases?.recovered || 0),
+                  0
+                )}
+                {/* {covidWorldStats.map((el) => (
                   <p key={el.id}>{el.cases.recovered}</p>
-                ))}
+                ))} */}
+                {/* {covidWorldStats.reduce(prev, (curr) => {
+                  prev + curr;
+                })} */}
               </Typography>
               <Typography variant="body2" color="text.secondary"></Typography>
             </CardContent>
@@ -96,6 +110,7 @@ const HomePage = () => {
           </CardActionArea>
           <CardActions></CardActions>
         </Card>
+        {}
       </div>
     </>
   );
