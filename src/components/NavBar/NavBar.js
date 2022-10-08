@@ -24,12 +24,7 @@ const NavBar = () => {
             border="0"
           ></img>
         </NavLink>
-        <form className="">
-          <input
-            className="border-2 border-black rounded-lg mr-2"
-            type="search"
-          ></input>
-        </form>
+
         <div className="flex gap-5 text-xl text-black">
           <NavLink to={"/stats"}>COVID STATS</NavLink>
           <NavLink to={"/country-stats"}>COUNTRY STATS</NavLink>
