@@ -9,7 +9,7 @@ export default function StateCard({
   new_recovered,
   total_active,
 }) {
-  let a = `https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.10/svg/${countryImg}.svg`;
+  let a = `https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.10/svg/${countryImg}.svg`; //url for flag
   return (
     <div className=" w-2/3  shadow-xl rounded p-4 ml-auto mr-auto mt-2 mb-2 grid grid-flow-row auto-rows-max bg-slate-50">
       <div className="bg-white flex flex-col justify-center items-center row-span-1 p-2 rounded-md">
@@ -63,6 +63,7 @@ export default function StateCard({
         //     Loading...
         //   </span>
         // </h4>
+
         <div className="grid grid-rows-2">
           <div className="grid grid-cols-3 gap-6  pt-2 pb-2 rounded  justify-evenly">
             <Skeleton variant="rounded" animation="wave" height={90} />
