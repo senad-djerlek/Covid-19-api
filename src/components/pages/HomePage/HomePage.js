@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { padding } from "@mui/system";
 
 const HomePage = () => {
   const [covidWorldStats, setCovidWorldStats] = useState([]);
@@ -33,72 +34,105 @@ const HomePage = () => {
     getDataCovidStats();
   }, []);
 
+  console.log();
   return (
     <>
       <div className="bg-cover">
         <img
-          className="w-full"
+          className="w-full "
+          style={{ height: "" }}
           src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
           // style={{ objectFit: "contain" }}
         ></img>
-      </div>
-      <div className="flex justify-center gap-20 p-6 ">
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Active
-                {covidWorldStats.map((el) => (
-                  <p key={el.id}>{el.cases.active}</p>
-                ))}
-              </Typography>
-              <Typography variant="body2" color="text.secondary"></Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions></CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Deaths
-                {covidWorldStats.map((el) => (
-                  <p key={el.id}>{el.deaths.total}</p>
-                ))}
-              </Typography>
-              <Typography variant="body2" color="text.secondary"></Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions></CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Recovered
-                {covidWorldStats.map((el) => (
-                  <p key={el.id}>{el.cases.recovered}</p>
-                ))}
-              </Typography>
-              <Typography variant="body2" color="text.secondary"></Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions></CardActions>
-        </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                View Countries
-              </Typography>
-              <Typography variant="body2" color="text.secondary"></Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions></CardActions>
-        </Card>
+        <div className="flex justify-center gap-10">
+          <div
+            className="flex justify-center items-center"
+            style={{
+              color: "white",
+              height: "15vh",
+              width: "20vh",
+              backgroundColor: "#880808",
+              border: "2px solid #880808 ",
+              borderRadius: "20px",
+            }}
+          >
+            Recovered:
+            <br></br>
+            {covidWorldStats.reduce(
+              (prev, curr) => (prev += curr?.cases?.recovered || 0),
+              0
+            )}
+          </div>
+          <div
+            className="flex justify-center items-center"
+            style={{
+              color: "white",
+              height: "15vh",
+              width: "20vh",
+              backgroundColor: "#880808",
+              border: "2px solid #880808 ",
+              borderRadius: "20px",
+            }}
+          >
+            Deaths:
+            <br></br>
+            {covidWorldStats.reduce(
+              (prev, curr) => (prev += curr?.deaths?.total || 0),
+              0
+            )}
+          </div>
+          <div
+            className="flex justify-center items-center"
+            style={{
+              color: "white",
+              height: "15vh",
+              width: "20vh",
+              backgroundColor: "#880808",
+              border: "2px solid #880808 ",
+              borderRadius: "20px",
+            }}
+          >
+            ActiveCases:
+            <br></br>
+            {covidWorldStats.reduce(
+              (prev, curr) => (prev += curr?.cases?.active || 0),
+              0
+            )}
+          </div>
+          <div
+            className="flex justify-center items-center"
+            style={{
+              color: "white",
+              height: "15vh",
+              width: "20vh",
+              backgroundColor: "#880808",
+              border: "2px solid #880808 ",
+              borderRadius: "20px",
+            }}
+          >
+            <NavLink to={"/country-stats"}>View Countries</NavLink>
+          </div>
+        </div>
       </div>
     </>
   );
-};
+}; /* {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.deaths?.total || 0),
+                  0
+                )} */
+/* {covidWorldStats.map((el) => (
+                  <p key={el.id}></p>
+                ))} */
+
+/* {covidWorldStats.reduce(
+                  (prev, curr) => (prev += curr?.cases?.recovered || 0),
+                  0
+                )} */
+/* {covidWorldStats.map((el) => (
+                  <p key={el.id}>{el.cases.recovered}</p>
+                ))} */
+/* {covidWorldStats.reduce(prev, (curr) => {
+                  prev + curr;
+                })} */
 
 export default HomePage;
