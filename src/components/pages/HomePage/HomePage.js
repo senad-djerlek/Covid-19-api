@@ -44,27 +44,36 @@ const HomePage = () => {
         ></img>
       </div>
       <div className="flex justify-center gap-20 p-6 ">
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "#880808", color: "white" }}
+        >
           <CardActionArea>
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Active:
-                {covidWorldStats.reduce(
-                  (prev, curr) => (prev += curr?.cases?.active || 0),
-                  0
-                )}
-              </Typography>
-
+              <div className="flex-col">
+                <Typography gutterBottom variant="h5" component="div">
+                  ActiveCases:
+                  <br></br>
+                  {covidWorldStats.reduce(
+                    (prev, curr) => (prev += curr?.cases?.active || 0),
+                    0
+                  )}
+                </Typography>
+              </div>
               <Typography variant="body2" color="text.secondary"></Typography>
             </CardContent>
           </CardActionArea>
           <CardActions></CardActions>
         </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "#880808", color: "white" }}
+        >
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
-                Deaths:
+                TotalDeaths:
+                <br></br>
                 {covidWorldStats.reduce(
                   (prev, curr) => (prev += curr?.deaths?.total || 0),
                   0
@@ -78,11 +87,15 @@ const HomePage = () => {
           </CardActionArea>
           <CardActions></CardActions>
         </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          style={{ backgroundColor: "#880808", color: "white" }}
+        >
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 Recovered:
+                <br></br>
                 {covidWorldStats.reduce(
                   (prev, curr) => (prev += curr?.cases?.recovered || 0),
                   0
@@ -99,7 +112,14 @@ const HomePage = () => {
           </CardActionArea>
           <CardActions></CardActions>
         </Card>
-        <Card sx={{ maxWidth: 345 }} style={{ backgroundColor: "blue" }}>
+        <Card
+          sx={{ maxWidth: 345 }}
+          style={{
+            backgroundColor: "#880808",
+            color: "white",
+            textAlign: "center",
+          }}
+        >
           <CardActionArea>
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
