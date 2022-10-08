@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "../../App.css";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 const NavBar = () => {
   return (
     <>
       <div
-        className="   flex justify-end items-center p-2 w-full m-auto gap-12 relative"
+        className="  flex justify-end items-center p-2 w-full m-auto gap-12 relative"
         style={{
           height: "10vh",
           backgroundColor: "white",
@@ -26,9 +27,15 @@ const NavBar = () => {
         </NavLink>
 
         <div className="flex gap-5 text-xl text-black pr-9">
-          <NavLink to={"/stats"}>COVID STATS</NavLink>
-          <NavLink to={"/country-stats"}>COUNTRY STATS</NavLink>
-          <NavLink to={"/about-us"}>ABOUT US</NavLink>
+          <NavLink className="covid" to={"/stats"}>
+            COVID STATS
+          </NavLink>
+          <NavLink className="country" to={"/country-stats"}>
+            COUNTRY STATS
+          </NavLink>
+          <NavLink className="about" to={"/about-us"}>
+            ABOUT US
+          </NavLink>
         </div>
       </div>
     </>

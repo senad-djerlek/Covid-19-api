@@ -9,7 +9,17 @@
   cursor: pointer;
   transition: 0.1s;
 }
+.country:hover {
+    color: red;
+    cursor: pointer;
+    transition: 0.1s;
+  }
 .covid,
-.about {
-  text-shadow: 2px 2px 4px #000000;
+.about,
+.country {
+  text-shadow: 0.5px 0.5px 0.5px #000000;
+}
+
+.kartice {
+    box-shadow: 2px 2px 4px black;
 }
