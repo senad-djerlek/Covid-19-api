@@ -40,7 +40,7 @@ const HomePage = () => {
     <>
       <div className="bg-cover">
         <img
-          className="w-full "
+          className="w-full mt-5"
           style={{ height: "" }}
           src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
           // style={{ objectFit: "contain" }}
