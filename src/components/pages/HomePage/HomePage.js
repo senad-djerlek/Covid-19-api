@@ -7,7 +7,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { padding, style } from "@mui/system";
-import "../../../App.css"
+import "./HomePage.css"
 
 const HomePage = () => {
   const [covidWorldStats, setCovidWorldStats] = useState([]);
