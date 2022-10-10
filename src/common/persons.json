@@ -4,27 +4,43 @@
     "name": "Senad Đerlek",
     "occupation": "Web developer",
     "coverURL": "https://avatars.githubusercontent.com/u/100077402?v=4",
-    "description": "Mnogoo dobar momak!"
+    "description": "Senad was in charge of the main functionalities of the application, as well as the arrangement of components in the project.",
+    "facebookLink": "",
+    "instagramLink": "https://www.instagram.com/senaaaaddd/",
+    "gitHubLink": "https://github.com/Senaddd",
+    "linkedInLink": "https://www.linkedin.com/in/senad-djerlek-97625411b/"
   },
   {
     "imageURL": "https://pbs.twimg.com/profile_images/1167150397632462850/ogLL-HOT.jpg",
     "name": "Emir Gegić",
     "occupation": "Web developer",
-    "coverURL": "https://pbs.twimg.com/profile_images/1167150397632462850/ogLL-HOT.jpg",
-    "description": "Mnogoo dobar momak!"
+    "coverURL": "https://scontent.fbeg1-1.fna.fbcdn.net/v/t31.18172-8/25073276_10156150982629560_5982104602222061667_o.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=DzBnHb6JNPUAX-AWi55&_nc_ht=scontent.fbeg1-1.fna&oh=00_AT82gr0kXL_VPDnnOqWQsROGgtSw9Jpufj5goEVvT2PhlA&oe=636B6F47",
+    "description": "Emir was the brain of the team for the Country Stats Page, where it was necessary to do a lot of functionality and choose the right styles.",
+    "facebookLink": "https://www.facebook.com/emir.gegic.9",
+    "instagramLink": "",
+    "gitHubLink": "https://github.com/gegeeem",
+    "linkedInLink": "https://www.linkedin.com/in/emir-gegic-3848341b9/"
   },
   {
     "imageURL": "https://scontent.fbeg1-1.fna.fbcdn.net/v/t39.30808-6/278924133_5338292666233915_295440059988710960_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=174925&_nc_ohc=4fXECYYwCd0AX__xU0g&_nc_ht=scontent.fbeg1-1.fna&oh=00_AT98ZrvpiTNrtTe-IAmWO0csa1l8uvUlJcLWtR5akAYvFQ&oe=63449E3D",
     "name": "Edin Kučević",
     "occupation": "Web developer",
     "coverURL": "https://avatars.githubusercontent.com/u/101284406?s=400&u=0c8b65b3abdde14c7d6a573a37570d20722efad4&v=4",
-    "description": "Mnogoo dobar momak!"
+    "description": "Edin is our main designer. In addition to doing most of the styling for our project, he had to do the communication with the whole team to get a better feel and fit.",
+    "facebookLink": "https://www.facebook.com/edinrokica",
+    "instagramLink": "https://www.instagram.com/edin.kucevic/",
+    "gitHubLink": "https://github.com/edinkucevic",
+    "linkedInLink": ""
   },
   {
-    "imageURL": "https://scontent.fbeg1-1.fna.fbcdn.net/v/t39.30808-6/301373234_6296963600330081_5561424661883235250_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=tDlCyWyfy6wAX93uPYW&_nc_ht=scontent.fbeg1-1.fna&oh=00_AT-WOyhFGsa241eQvtAYqjoMwVbPovKh_bUciSFlX2WUgw&oe=63459C00",
+    "imageURL": "https://avatars.githubusercontent.com/u/89378479?v=4",
     "name": "Dženan Košuta",
     "occupation": "Web developer",
     "coverURL": "https://scontent.fbeg1-1.fna.fbcdn.net/v/t1.6435-9/131152432_4331164360243358_5920592390207698554_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_ohc=nseOwYNEQ98AX_V1blq&_nc_ht=scontent.fbeg1-1.fna&oh=00_AT-wMrY8eY-5RUOZbwKozWRCljKANyMTvTinoyrbkLKQ3Q&oe=63647F92",
-    "description": "Mnogoo dobar momak!"
+    "description": "Dženan participated in all fields, starting from the planning of the project, as well as its functionality. He offered solutions to our team so that everything would work in a correct way.",
+    "facebookLink": "https://www.facebook.com/dzenoafc/",
+    "instagramLink": "https://www.instagram.com/dzenan.kosuta/",
+    "gitHubLink": "https://github.com/dzenankosuta",
+    "linkedInLink": "https://www.linkedin.com/in/dzenan-kosuta/"
   }
 ]
