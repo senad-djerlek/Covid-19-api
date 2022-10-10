@@ -38,11 +38,11 @@ function CountryCovidStats() {
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
-    timeout: 5000,
+    // timeout: 5000,
     params: { country: countryName.name, day: countryName.date },
     // params: { country: countryName.name },
     headers: {
-      "X-RapidAPI-Key": "e0d331ecf0msh511ca18a17a79e5p1481dfjsna27313c7f6c9",
+      "X-RapidAPI-Key": "693630f633msh51b33054b2d136dp121190jsn6b6cf9f603a9",
       "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
     },
     clarifyTimeoutError: false,
@@ -134,12 +134,12 @@ function CountryCovidStats() {
       })
       .catch(function (error) {
         console.error(error);
-        setCountryData({
-          new_cases: "no-data",
-          new_death: "no-data",
-          new_recovered: "no-data",
-          total_active: "no-data",
-        });
+        // setCountryData({
+        //   new_cases: "no-data",
+        //   new_death: "no-data",
+        //   new_recovered: "no-data",
+        //   total_active: "no-data",
+        // });
       });
     window.scrollTo(0, 0);
   }, [countryName.name, countryName.date]);
