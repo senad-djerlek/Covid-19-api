@@ -1,19 +1,15 @@
 .kartice {
-    box-shadow: 5px 10px 18px #888888;
-    transition: 0.3s;
-
+  box-shadow: 5px 10px 18px #888888;
+  transition: 0.3s;
 }
 .kartice:hover {
-    transform: scale(1.2); 
-
+  transform: scale(1.2);
 }
 .kartica4 {
-    box-shadow: 5px 10px 18px #888888;
-    transition: 0.3s;
-
+  box-shadow: 5px 10px 18px #888888;
+  transition: 0.3s;
 }
 
 .kartica4:hover {
-    transform: scale(1.2); 
-
+  transform: scale(1.2);
 }
