@@ -1,0 +1,13 @@
+.flag {
+    animation: wave 1s ease-in-out infinite alternate;
+}
+
+@keyframes wave  {
+    0% {
+        top: 5%;
+    }
+    100% {
+        top: -5%;
+    }
+    
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import Skeleton from "@mui/material/Skeleton";
-
+import "./StateCard.css"
 export default function StateCard({
   countryName,
   countryImg,
@@ -11,11 +11,11 @@ export default function StateCard({
 }) {
   let a = `https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.10/svg/${countryImg}.svg`; //url for flag
   return (
-    <div className=" w-2/3  shadow-xl rounded p-4 ml-auto mr-auto mt-2 mb-2 grid grid-flow-row auto-rows-max bg-slate-50">
-      <div className="bg-white flex flex-col justify-center items-center row-span-1 p-2 rounded-md">
-        <div className="flex justify-center gap-1 items-center bg-white rounded-md m-1 p-3">
+    <div className="  w-2/3  shadow-xl rounded p-4 ml-auto mr-auto mt-2 mb-2 grid grid-flow-row auto-rows-max bg-slate-50">
+      <div className=" bg-white flex flex-col justify-center items-center row-span-1 p-2 rounded-md">
+        <div className=" flex justify-center gap-1 items-center bg-white rounded-md m-1 p-3">
           <img src={a} className=" w-14 opacity-75 block" />{" "}
-          <div className="flex  items-baseline ">
+          <div className="  flex  items-baseline ">
             <h2 className=" font-bold text-2xl text-gray-600">{countryName}</h2>
           </div>
         </div>
