@@ -7,7 +7,7 @@ import StateCard from "../../StateCard/StateCard";
 
 //get Date
 const justDay =
-  new Date().getDate() > 10
+  new Date().getDate() >= 10
     ? new Date().getDate()
     : "0".concat(new Date().getDate());
 
@@ -38,7 +38,7 @@ function CountryCovidStats() {
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
-    timeout: 3000,
+    timeout: 5000,
     params: { country: countryName.name, day: countryName.date },
     // params: { country: countryName.name },
     headers: {
@@ -120,6 +120,7 @@ function CountryCovidStats() {
           "Object.keys(seconArr).length",
           response.data.response.length
         );
+        console.log("seconarr", seconArr);
         response.data.response.length
           ? setCountryData(seconArr)
           : setCountryData({
@@ -140,7 +141,7 @@ function CountryCovidStats() {
           total_active: "no-data",
         });
       });
-      window.scrollTo(0,0);
+    window.scrollTo(0, 0);
   }, [countryName.name, countryName.date]);
   return (
     <div className="grid grid-row-2 bg-white mt-3 h-screen">
