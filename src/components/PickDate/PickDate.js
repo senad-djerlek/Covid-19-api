@@ -24,11 +24,8 @@ const onThisDay = new Date().getFullYear() + "-" + justMonth + "-" + justDay;
 
 export default function MaterialUIPickers({ dateFunc }) {
   const [value, setValue] = React.useState(dayjs(onThisDay));
-  console.log("onThisDay", onThisDay);
 
   const handleChange = (newValue) => {
-    console.log("haje", typeof newValue.$d);
-
     const justDateLike =
       newValue.$d.getDate() >= 10
         ? newValue.$d.getDate()
@@ -45,8 +42,6 @@ export default function MaterialUIPickers({ dateFunc }) {
     const newDate = `${newValue.$d.getFullYear()}-${justMonthLike}-${justDateLike}`;
     setValue(newDate);
     dateFunc(newDate);
-
-    console.log("valuofDate----", value);
   };
 
   return (
