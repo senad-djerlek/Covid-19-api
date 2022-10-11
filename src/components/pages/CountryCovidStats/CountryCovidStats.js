@@ -36,7 +36,7 @@ function CountryCovidStats() {
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
-    // timeout: 120000,
+    timeout: 60000,
     params: { country: countryName.name, day: countryName.date },
 
     headers: {
