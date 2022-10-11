@@ -32,15 +32,13 @@ function CountryCovidStats() {
     new_recovered: "",
     total_active: "",
   });
-  console.log("countryName", countryName);
-  console.log("countryData", countryData);
-  console.log("countryName from CountryStats", countryName);
+
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
     // timeout: 120000,
     params: { country: countryName.name, day: countryName.date },
-    // params: { country: countryName.name },
+
     headers: {
       "X-RapidAPI-Key": "693630f633msh51b33054b2d136dp121190jsn6b6cf9f603a9",
       "X-RapidAPI-Host": "covid-193.p.rapidapi.com",
@@ -51,34 +49,6 @@ function CountryCovidStats() {
     axios
       .request(options, { date: countryName.date })
       .then(function (response) {
-        // console.log(
-        //   "response",
-        //   response.data?.response?.reduce(
-        //     (acc, curr) => (
-        //       {
-        //         new_cases: curr.cases.new,
-        //         new_death: curr.deaths.new,
-        //         new_recovered: curr.cases.recovered,
-        //       },
-        //       {}
-        //     )
-        //   )
-        // );
-        // console.log(
-        //   "prenos",
-        //   response.data.response?.reduce(
-        //     (acc, curr) => {
-        //       return {
-        //         ...acc,
-        //         new_cases: curr.cases.new,
-        //         new_death: curr.deaths.new,
-        //         new_recovered: curr.cases.recovered,
-        //       };
-        //     },
-        //     { new_cases: "", new_death: "", new_recovered: "" }
-        //   )
-        // );
-        console.log("response", response);
         const seconArr = response.data.response?.reduce(
           (acc, curr) => {
             return {
@@ -98,18 +68,7 @@ function CountryCovidStats() {
             total_active: "",
           }
         );
-        // const newArr = response?.data?.response?.reduce((acc, curr) => {
-        //   return (
-        //     {
-        //       ...acc,
-        //       new_cases: curr.cases.new,
-        //       new_death: curr.deaths.new,
-        //       new_recovered: curr.cases.recovered,
-        //     },
-        //     { new_cases: "", new_death: "", new_recovered: "" }
-        //   );
-        // });
-        // console.log("newArr", newArr);
+
         setCountryData({
           new_cases: "",
           new_death: "",
@@ -117,11 +76,6 @@ function CountryCovidStats() {
           total_active: "",
         });
 
-        console.log(
-          "Object.keys(seconArr).length",
-          response.data.response.length
-        );
-        console.log("seconarr", seconArr);
         response.data.response?.length
           ? setCountryData(seconArr)
           : setCountryData({
@@ -130,8 +84,6 @@ function CountryCovidStats() {
               new_recovered: "no-data",
               total_active: "no-data",
             });
-
-        // console.log("countryData45454", countryData.cases);
       })
       .catch(function (error) {
         console.error(error);
@@ -146,7 +98,6 @@ function CountryCovidStats() {
   }, [countryName.name, countryName.date]);
   return (
     <div className="grid grid-row-2 bg-white mt-3 h-screen">
-      {/* <Grafik new_cases={[100, 156, 30, 54]} new_death={[20, 52, 0, 86]} /> */}
       <div className="flex justify-center gap-2">
         <CountrySelect
           countryNameFunc={(nameOfState, imgOfState) =>
