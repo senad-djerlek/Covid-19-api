@@ -23,47 +23,72 @@ function PersonCard({
   linkedInLink,
 }) {
   return (
-    <Card
-      className="aboutCard"
-      sx={{ width: 305, m: 2, height: 450, position: "relative" }}
-    >
-      <CardHeader
-        avatar={<Avatar alt="Avatar" src={imageURL} />}
-        title={name}
-        subheader={occupation}
-      />
-      {
-        <CardMedia
-          sx={{ height: 200 }}
-          component="img"
-          height="140"
-          image={coverURL}
-          alt="Cover Photo"
-        />
-      }
+    // <Card
+    //   className="aboutCard"
+    //   sx={{ width: 305, m: 2, height: 450, position: "relative" }}
+    // >
+    //   <CardHeader
+    //     avatar={<Avatar alt="Avatar" src={imageURL} />}
+    //     title={name}
+    //     subheader={occupation}
+    //   />
+    //   {
+    //     <CardMedia
+    //       sx={{ height: 200 }}
+    //       component="img"
+    //       height="140"
+    //       image={coverURL}
+    //       alt="Cover Photo"
+    //     />
+    //   }
 
-      <CardContent>
-        {
-          <Typography variant="body2" color="text.secondary" component="p">
-            {description}
-          </Typography>
-        }
-      </CardContent>
-      <div className="flex justify-evenly">
-        <a href={facebookLink} target="_blank">
-          <FacebookIcon className="icons-about" />
-        </a>
-        <a href={instagramLink} target="_blank">
-          <InstagramIcon className="icons-about" />
-        </a>
-        <a href={gitHubLink} target="_blank">
+    //   <CardContent>
+    //     {
+    //       <Typography variant="body2" color="text.secondary" component="p">
+    //         {description}
+    //       </Typography>
+    //     }
+    //   </CardContent>
+    //   <div className="flex justify-evenly">
+    //     <a href={facebookLink} target="_blank">
+    //       <FacebookIcon className="icons-about" />
+    //     </a>
+    //     <a href={instagramLink} target="_blank">
+    //       <InstagramIcon className="icons-about" />
+    //     </a>
+    //     <a href={gitHubLink} target="_blank">
+    //       <GitHubIcon className="icons-about" />
+    //     </a>
+    //     <a href={linkedInLink} target="_blank">
+    //       <LinkedInIcon className="icons-about" />
+    //     </a>
+    //   </div>
+    // </Card>
+
+    <div className="container">
+    <div className="card">
+      <div className="image">
+        <img src ={imageURL}></img>
+      </div>
+      <div className="content">
+        <h3 className="font-bold ">{name}</h3>
+        <p>{description}</p>
+      <div className="flex justify-evenly mt-5"> <a href={facebookLink} target="_blank">
+           <FacebookIcon className="icons-about" />
+       </a>
+         <a href={instagramLink} target="_blank">
+           <InstagramIcon className="icons-about" />
+         </a>
+         <a href={gitHubLink} target="_blank">
           <GitHubIcon className="icons-about" />
         </a>
-        <a href={linkedInLink} target="_blank">
-          <LinkedInIcon className="icons-about" />
-        </a>
-      </div>
-    </Card>
+         <a href={linkedInLink} target="_blank">
+           <LinkedInIcon className="icons-about" />
+         </a></div>
+
+        </div>
+    </div>    
+  </div>
   );
 }
 
