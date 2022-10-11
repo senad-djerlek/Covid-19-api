@@ -21,7 +21,6 @@ const CovidStatsCard = ({
         borderRadius: "5px",
       }}
     >
-      {/* https://www.worldometers.info/img/flags/${countryImg}-flag.gif */}
       <Card
         sx={{
           boxShadow:
