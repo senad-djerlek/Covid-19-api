@@ -22,8 +22,8 @@ const onThisDay = new Date().getFullYear() + "-" + justMonth + "-" + justDay;
 //component
 function CountryCovidStats() {
   const [countryName, setCountryName] = useState({
-    name: "Andorra",
-    imgUrl: "ad",
+    name: "Serbia",
+    imgUrl: "rs",
     date: `${onThisDay}`,
   });
   const [countryData, setCountryData] = useState({
@@ -38,7 +38,7 @@ function CountryCovidStats() {
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
-    // timeout: 5000,
+    timeout: 60000,
     params: { country: countryName.name, day: countryName.date },
     // params: { country: countryName.name },
     headers: {

@@ -9,7 +9,7 @@ export default function CountrySelect({ countryNameFunc }) {
       onChange={(event, value) => {
         countryNameFunc(value.label, value.code.toLowerCase());
       }}
-      defaultValue={countries.find((el) => el.label === "Andorra")}
+      defaultValue={countries.find((el) => el.label === "Serbia")}
       id="country-select-demo"
       sx={{
         width: 300,
