@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
-import Typography from "@mui/material/Typography";
-
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
+import CovidStatsCard from "../../Card/CovidStatsCard";
+import countries from "../../../common/country.json";
 
 const CovidStats = () => {
   const [covidStats, setCovidStats] = useState([]);
   const [activePage, setPage] = useState(1);
   const handleChange = (event, value) => {
     setPage(value);
+    window.scrollTo(0, 0);
   };
   const options = {
     method: "GET",
@@ -52,21 +52,28 @@ const CovidStats = () => {
   useEffect(() => {
     getDataCovidStats();
   }, []);
+
+  const flags = [{ country: "Cameroon", code: "cm" }];
+
   return (
-    <div className="py-16">
-      <NavLink to={"/"}> Click me to go back to homepage</NavLink>
+    <div className="py-16 flex flex-col items-center gap-8">
       {covidStats
         .map((el) => (
-          <ul key={el.country}>
-            <li>
-              Continent Name: {el.continent} Country Name: {el.country}{" "}
-              Population: {el.population} New Cases:{el.cases.new} Deaths:
-              {el.deaths.total}
-            </li>
-          </ul>
+          <CovidStatsCard
+            key={el.country}
+            continent={el.continent}
+            countryName={el.country}
+            population={el.population}
+            newCases={el.cases.new}
+            deaths={el.deaths.total}
+            countryImg={
+              countries.find((flag) => flag.name === el.country)
+                ? countries.find((flag) => flag.name === el.country).code
+                : "xx"
+            }
+          />
         ))
         .slice(visitedPerPage, visitedPerPage + perPage)}
-      {/* <Pagination page={activePage} onChange={setPage} total={totalPages} />{" "} */}
       <Stack spacing={2}>
         <Pagination
           page={activePage}
