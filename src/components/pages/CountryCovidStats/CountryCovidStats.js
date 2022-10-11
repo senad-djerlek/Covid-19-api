@@ -32,13 +32,13 @@ function CountryCovidStats() {
     new_recovered: "",
     total_active: "",
   });
-  // console.log("countryName", countryName);
-  // console.log("cases", countryData);
+  console.log("countryName", countryName);
+  console.log("countryData", countryData);
   console.log("countryName from CountryStats", countryName);
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/history",
-    timeout: 60000,
+    // timeout: 120000,
     params: { country: countryName.name, day: countryName.date },
     // params: { country: countryName.name },
     headers: {
@@ -78,6 +78,7 @@ function CountryCovidStats() {
         //     { new_cases: "", new_death: "", new_recovered: "" }
         //   )
         // );
+        console.log("response", response);
         const seconArr = response.data.response?.reduce(
           (acc, curr) => {
             return {
@@ -121,7 +122,7 @@ function CountryCovidStats() {
           response.data.response.length
         );
         console.log("seconarr", seconArr);
-        response.data.response.length
+        response.data.response?.length
           ? setCountryData(seconArr)
           : setCountryData({
               new_cases: "no-data",
@@ -134,12 +135,12 @@ function CountryCovidStats() {
       })
       .catch(function (error) {
         console.error(error);
-        // setCountryData({
-        //   new_cases: "no-data",
-        //   new_death: "no-data",
-        //   new_recovered: "no-data",
-        //   total_active: "no-data",
-        // });
+        setCountryData({
+          new_cases: "no-data",
+          new_death: "no-data",
+          new_recovered: "no-data",
+          total_active: "no-data",
+        });
       });
     window.scrollTo(0, 0);
   }, [countryName.name, countryName.date]);
@@ -150,6 +151,12 @@ function CountryCovidStats() {
         <CountrySelect
           countryNameFunc={(nameOfState, imgOfState) =>
             setCountryName((prev) => {
+              setCountryData({
+                new_cases: "",
+                new_death: "",
+                new_recovered: "",
+                total_active: "",
+              });
               return { ...prev, name: nameOfState, imgUrl: imgOfState };
             })
           }
