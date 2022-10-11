@@ -16,3 +16,71 @@
 .aboutCard {
   box-shadow: 5px 10px 18px #888888;
 }
+.container {
+  position : relative;
+  width : 500px;
+  display : flex;
+  align-items : center;
+  justify-content : center;
+  flex-direction: row;
+  padding : 30px;  
+
+}
+
+.container .card {
+  position: relative;
+  max-width : 300px;
+  height : 215px;  
+  background-color : #fff;
+  margin : 30px 10px;
+  padding : 20px 15px;
+  
+  display : flex;
+  flex-direction : column;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.5);
+  transition : 0.3s ease-in-out;
+  border-radius : 15px;
+}
+.container .card:hover {
+  height : 360px;    
+}
+
+
+.container .card .image {
+  position : relative;
+  width : 200px;
+  height : 200px;
+  
+  top : -40%;
+  left: 30px;
+  box-shadow : 0 5px 20px rgba(0,0,0,0.2);
+  z-index : 1;
+  border-radius: 15px;
+}
+
+.container .card .image img {
+  max-width : 100%;
+  border-radius : 15px;
+}
+
+.container .card .content {
+  position : relative;
+  top : -150px;
+  padding : 10px 15px;
+  color : #111;
+  text-align : center;
+  
+  visibility : hidden;
+  opacity : 0;
+  transition : 0.3s ease-in-out;
+    
+}
+
+.container .card:hover .content {
+   margin-top : 30px;
+   visibility : visible;
+   opacity : 1;
+   transition-delay: 0.2s;
+  
+}
+
