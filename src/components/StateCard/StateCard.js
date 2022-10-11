@@ -1,6 +1,7 @@
 import React from "react";
 import Skeleton from "@mui/material/Skeleton";
-import "./StateCard.css"
+import "./StateCard.css";
+
 export default function StateCard({
   countryName,
   countryImg,
