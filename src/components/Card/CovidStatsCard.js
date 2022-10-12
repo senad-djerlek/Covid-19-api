@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
+import "./CovidStatsCard.css";
 
 const CovidStatsCard = ({
   continent,
@@ -19,12 +20,14 @@ const CovidStatsCard = ({
         width: 1000,
         border: "1px solid rgb(239, 110, 110);",
         borderRadius: "5px",
+        cursor: "default",
       }}
     >
       <Card
+        className="covid-kartica"
         sx={{
-          boxShadow:
-            "4px 4px 10px rgba(82, 32, 20, 0.6), -4px -4px 10px rgba(82, 32, 20, 0.6)",
+          boxShadow: "10px 5px 18px rgba(82, 32, 20, 0.6)",
+
           backgroundImage: `url(
             https://cdn.jsdelivr.net/npm/svg-country-flags@1.2.10/png250px/${countryImg}.png
               )`,

@@ -54,7 +54,8 @@ const CovidStats = () => {
   const flags = [{ country: "Cameroon", code: "cm" }];
 
   return (
-    <div className="py-16 flex flex-col items-center gap-8">
+    <div
+      className="py-16 flex flex-col items-center gap-8">
       {loading ? (
         covidStats
           .map((el) => (
