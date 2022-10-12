@@ -52,7 +52,9 @@ export default function MaterialUIPickers({ dateFunc }) {
           defaultValue={onThisDay}
           value={value}
           onChange={handleChange}
-          renderInput={(params) => <TextField {...params} />}
+          renderInput={(params) => (
+            <TextField {...params} sx={{ backgroundColor: "white" }} />
+          )}
         />
         {/* <MobileDatePicker
           label="Date mobile"
