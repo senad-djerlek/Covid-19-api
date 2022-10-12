@@ -102,6 +102,12 @@ function CountryCovidStats() {
         <CountrySelect
           countryNameFunc={(nameOfState, imgOfState) =>
             setCountryName((prev) => {
+              setCountryData({
+                new_cases: "",
+                new_death: "",
+                new_recovered: "",
+                total_active: "",
+              });
               return { ...prev, name: nameOfState, imgUrl: imgOfState };
             })
           }
