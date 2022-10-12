@@ -3,7 +3,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { NavLink } from "react-router-dom";
-import "./Footer.css"
+import "./Footer.css";
 const Footer = () => {
   return (
     <div style={{ height: "10vh", backgroundColor: "#edf2f4" }}>
@@ -26,10 +26,18 @@ const Footer = () => {
           className=" flex justify-center gap-5 pt-5"
           style={{ color: "black", cursor: "pointer", fontSize: "19px" }}
         >
-          <NavLink className="footerlink" to={"/stats"}>
+          <NavLink
+            className="footerlink"
+            to={"/stats"}
+            onClick={() => window.scrollTo(0, 0)}
+          >
             Covid Stats
           </NavLink>
-          <NavLink className="footerlink" to={"/about-us"}>
+          <NavLink
+            className="footerlink"
+            to={"/about-us"}
+            onClick={() => window.scrollTo(0, 0)}
+          >
             About us
           </NavLink>{" "}
           <br></br>

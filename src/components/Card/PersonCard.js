@@ -66,29 +66,32 @@ function PersonCard({
     // </Card>
 
     <div className="container">
-    <div className="card">
-      <div className="image">
-        <img src ={imageURL}></img>
-      </div>
-      <div className="content">
-        <h3 className="font-bold ">{name}</h3>
-        <p>{description}</p>
-      <div className="flex justify-evenly mt-5"> <a href={facebookLink} target="_blank">
-           <FacebookIcon className="icons-about" />
-       </a>
-         <a href={instagramLink} target="_blank">
-           <InstagramIcon className="icons-about" />
-         </a>
-         <a href={gitHubLink} target="_blank">
-          <GitHubIcon className="icons-about" />
-        </a>
-         <a href={linkedInLink} target="_blank">
-           <LinkedInIcon className="icons-about" />
-         </a></div>
-
+      <div className="card">
+        <div className="image">
+          <img src={imageURL}></img>
+          <h3 className="font-bold text-center py-2">{name}</h3>
         </div>
-    </div>    
-  </div>
+        <div className="content">
+          <h3 className="italic mt-5 mb-2">{occupation}</h3>
+          <p>{description}</p>
+          <div className="flex justify-evenly mt-5">
+            {" "}
+            <a href={facebookLink} target="_blank">
+              <FacebookIcon className="icons-about" />
+            </a>
+            <a href={instagramLink} target="_blank">
+              <InstagramIcon className="icons-about" />
+            </a>
+            <a href={gitHubLink} target="_blank">
+              <GitHubIcon className="icons-about" />
+            </a>
+            <a href={linkedInLink} target="_blank">
+              <LinkedInIcon className="icons-about" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
