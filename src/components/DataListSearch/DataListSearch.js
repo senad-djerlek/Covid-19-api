@@ -43,6 +43,9 @@ export default function CountrySelect({ countryNameFunc }) {
             ...params.inputProps,
             autoComplete: "new-password", // disable autocomplete and autofill
           }}
+          sx={{
+            backgroundColor: "white",
+          }}
         />
       )}
     />
