@@ -9,7 +9,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 const CovidStats = () => {
   const [covidStats, setCovidStats] = useState([]);
   const [activePage, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const handleChange = (event, value) => {
     setPage(value);
     window.scrollTo(0, 0);
@@ -24,11 +24,11 @@ const CovidStats = () => {
   };
 
   const getDataCovidStats = () => {
+    setLoading(true);
     axios.request(options).then(function (response) {
       setCovidStats(response.data.response);
-      console.log(response.data.response);
+      setLoading(false);
     });
-    setLoading(true);
 
     // axios
     //   .get("https://covid-193.p.rapidapi.com/statistics/`${}")
@@ -51,39 +51,38 @@ const CovidStats = () => {
     getDataCovidStats();
   }, []);
 
-  const flags = [{ country: "Cameroon", code: "cm" }];
-
   return (
-    <div
-      className="py-16 flex flex-col items-center gap-8">
+    <div className="py-16 flex flex-col items-center gap-8">
       {loading ? (
-        covidStats
-          .map((el) => (
-            <CovidStatsCard
-              key={el.country}
-              continent={el.continent}
-              countryName={el.country}
-              population={el.population}
-              newCases={el.cases.new}
-              deaths={el.deaths.total}
-              countryImg={
-                countries.find((flag) => flag.name === el.country)
-                  ? countries.find((flag) => flag.name === el.country).code
-                  : "xx"
-              }
-            />
-          ))
-          .slice(visitedPerPage, visitedPerPage + perPage)
-      ) : (
         <ClipLoader />
+      ) : (
+        <>
+          {covidStats
+            .map((el) => (
+              <CovidStatsCard
+                key={el.country}
+                continent={el.continent}
+                countryName={el.country}
+                population={el.population}
+                newCases={el.cases.new}
+                deaths={el.deaths.total}
+                countryImg={
+                  countries.find((flag) => flag.name === el.country)
+                    ? countries.find((flag) => flag.name === el.country).code
+                    : "xx"
+                }
+              />
+            ))
+            .slice(visitedPerPage, visitedPerPage + perPage)}
+          <Stack spacing={2}>
+            <Pagination
+              page={activePage}
+              count={totalPages}
+              onChange={handleChange}
+            ></Pagination>
+          </Stack>
+        </>
       )}
-      <Stack spacing={2}>
-        <Pagination
-          page={activePage}
-          count={totalPages}
-          onChange={handleChange}
-        ></Pagination>
-      </Stack>
     </div>
   );
 };
