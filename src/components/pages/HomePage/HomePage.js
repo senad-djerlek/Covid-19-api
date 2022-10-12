@@ -7,11 +7,12 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Button, CardActionArea, CardActions } from "@mui/material";
 import { padding, style } from "@mui/system";
-import "./HomePage.css"
+import ClipLoader from "react-spinners/ClipLoader";
+import "./HomePage.css";
 
 const HomePage = () => {
   const [covidWorldStats, setCovidWorldStats] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   const options = {
     method: "GET",
     url: "https://covid-193.p.rapidapi.com/statistics",
@@ -21,15 +22,11 @@ const HomePage = () => {
     },
   };
   const getDataCovidStats = () => {
-    axios
-      .request(options)
-      .then(function (response) {
-        setCovidWorldStats(response.data.response);
-        console.log(response.data.response);
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    setLoading(true);
+    axios.request(options).then(function (response) {
+      setCovidWorldStats(response.data.response);
+      setLoading(false);
+    });
   };
   useEffect(() => {
     getDataCovidStats();
@@ -38,96 +35,107 @@ const HomePage = () => {
   console.log();
   return (
     <>
-      <div className="bg-cover">
-        <img
-          className="w-full mt-5"
-          style={{ height: "" }}
-          src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
-          // style={{ objectFit: "contain" }}
-        ></img>
-        <h1
-          className="flex justify-center pb-10 font-bold text-2xl pt-6"
-          style={{ color: " #880808 ", fontSize: "40px" , fontFamily: "Open Sans"}}
-        >
-          World Stats
-        </h1>
-        <div className="flex justify-center gap-10 ">
-          <div
-            className="kartice flex justify-center items-center"
+      {loading ? (
+        <ClipLoader />
+      ) : (
+        <div className="bg-cover">
+          <img
+            className="w-full mt-5"
+            style={{ height: "" }}
+            src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
+            // style={{ objectFit: "contain" }}
+          ></img>
+          <h1
+            className="flex justify-center pb-10 font-bold text-2xl pt-6"
             style={{
-              height: "20vh",
-              width: "40vh",
-              border: "0.8px solid black",
-              borderRadius: "7px",
-              cursor: "default"
-
+              color: " #880808 ",
+              fontSize: "40px",
+              fontFamily: "Open Sans",
             }}
           >
-            <div style={{ fontSize: "20px" }}>
-              Recovered:
-              <div className="font-bold" style={{ color: "green" }}>
-                {covidWorldStats.reduce(
-                  (prev, curr) => (prev += curr?.cases?.recovered || 0),
-                  0
-                )}
+            World Stats
+          </h1>
+          <div className="flex justify-center gap-10 ">
+            <div
+              className="kartice flex justify-center items-center"
+              style={{
+                height: "20vh",
+                width: "40vh",
+                border: "0.8px solid black",
+                borderRadius: "7px",
+                cursor: "default",
+              }}
+            >
+              <div style={{ fontSize: "20px" }}>
+                Recovered:
+                <div className="font-bold" style={{ color: "green" }}>
+                  {covidWorldStats.reduce(
+                    (prev, curr) => (prev += curr?.cases?.recovered || 0),
+                    0
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            className="kartice flex justify-center items-center"
-            style={{
-              height: "20vh",
-              width: "40vh",
-              border: "0.8px solid black ",
-              borderRadius: "7px",
-              cursor: "default",
-            }}
-          >
-            <div style={{ fontSize: "20px" }}>
-              Deaths:
-              <div className="font-bold" style={{ color: "red" }}>
-                {covidWorldStats.reduce(
-                  (prev, curr) => (prev += curr?.deaths?.total || 0),
-                  0
-                )}
+            <div
+              className="kartice flex justify-center items-center"
+              style={{
+                height: "20vh",
+                width: "40vh",
+                border: "0.8px solid black ",
+                borderRadius: "7px",
+                cursor: "default",
+              }}
+            >
+              <div style={{ fontSize: "20px" }}>
+                Deaths:
+                <div className="font-bold" style={{ color: "red" }}>
+                  {covidWorldStats.reduce(
+                    (prev, curr) => (prev += curr?.deaths?.total || 0),
+                    0
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            className="kartice flex justify-center items-center"
-            style={{
-              height: "20vh",
-              width: "40vh",
-              border: "0.8px solid black ",
-              borderRadius: "7px",
-              cursor: "default",
-            }}
-          >
-            <div style={{ fontSize: "20px" }}>
-              ActiveCases:
-              <div className="font-bold" style={{ color: "blue" }}>
-                {covidWorldStats.reduce(
-                  (prev, curr) => (prev += curr?.cases?.active || 0),
-                  0
-                )}
+            <div
+              className="kartice flex justify-center items-center"
+              style={{
+                height: "20vh",
+                width: "40vh",
+                border: "0.8px solid black ",
+                borderRadius: "7px",
+                cursor: "default",
+              }}
+            >
+              <div style={{ fontSize: "20px" }}>
+                ActiveCases:
+                <div className="font-bold" style={{ color: "blue" }}>
+                  {covidWorldStats.reduce(
+                    (prev, curr) => (prev += curr?.cases?.active || 0),
+                    0
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-          <div
-            className="kartica4 flex justify-center items-center"
-            style={{
-              height: "20vh",
-              width: "40vh",
-              border: "0.8px solid black ",
-              borderRadius: "7px",
-            }}
-          >
-            <NavLink className="countryStats" to={"/country-stats"} style={{ fontSize: "25px" ,fontWeight: "bold" }}>
-              Country Stats
-            </NavLink>
+            <div
+              className="kartica4 flex justify-center items-center"
+              style={{
+                height: "20vh",
+                width: "40vh",
+                border: "0.8px solid black ",
+                borderRadius: "7px",
+              }}
+            >
+              <NavLink
+                className="countryStats"
+                to={"/country-stats"}
+                style={{ fontSize: "25px", fontWeight: "bold" }}
+              >
+                Country Stats
+              </NavLink>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </>
   );
 }; /* {covidWorldStats.reduce(
