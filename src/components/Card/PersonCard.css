@@ -23,7 +23,9 @@
   align-items : center;
   justify-content : center;
   flex-direction: row;
-  padding : 30px;  
+  padding : 30px; 
+  margin-top: 30px;
+
 
 }
 
@@ -42,7 +44,7 @@
   border-radius : 15px;
 }
 .container .card:hover {
-  height : 360px;    
+  height : 380px;    
 }
 
 

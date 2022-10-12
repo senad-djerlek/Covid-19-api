@@ -97,7 +97,17 @@ function CountryCovidStats() {
     window.scrollTo(0, 0);
   }, [countryName.name, countryName.date]);
   return (
-    <div className="grid grid-row-2 bg-white mt-3 h-screen">
+    <div className="grid grid-row-2 bg-white mt-3 h-screen"
+    style={{
+      backgroundImage:
+      "url(https://northernvirginiamag.com/wp-content/uploads/2020/06/people-with-masks.jpg)",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    
+
+    }}
+    >
       <div className="flex justify-center gap-2">
         <CountrySelect
           countryNameFunc={(nameOfState, imgOfState) =>
