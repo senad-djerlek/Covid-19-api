@@ -98,25 +98,27 @@ function CountryCovidStats() {
   }, [countryName.name, countryName.date]);
   return (
     <div
+<<<<<<< Updated upstream
       className="grid grid-row-2 bg-white mt-3 h-screen"
+=======
+      className="grid grid-row-2  bg-white mt-3 h-screen"
+>>>>>>> Stashed changes
       style={{
         backgroundImage:
           "url(https://northernvirginiamag.com/wp-content/uploads/2020/06/people-with-masks.jpg)",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+<<<<<<< Updated upstream
+=======
+        bac
+>>>>>>> Stashed changes
       }}
     >
       <div className="flex justify-center gap-2">
         <CountrySelect
           countryNameFunc={(nameOfState, imgOfState) =>
             setCountryName((prev) => {
-              setCountryData({
-                new_cases: "",
-                new_death: "",
-                new_recovered: "",
-                total_active: "",
-              });
               return { ...prev, name: nameOfState, imgUrl: imgOfState };
             })
           }
