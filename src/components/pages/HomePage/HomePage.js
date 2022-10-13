@@ -36,7 +36,10 @@ const HomePage = () => {
   return (
     <>
       {loading ? (
-        <ClipLoader />
+        <div className="flex flex-col items-center gap-8">
+          <ClipLoader color={"#ef6e6e"} size={45} />
+          <h1 className="text-lg text-red-900">Loading covid-19 image.</h1>
+        </div>
       ) : (
         <div className="bg-cover">
           <img

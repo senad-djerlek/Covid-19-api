@@ -54,7 +54,12 @@ const CovidStats = () => {
   return (
     <div className="py-16 flex flex-col items-center gap-8">
       {loading ? (
-        <ClipLoader />
+        <>
+          <ClipLoader color={"#ef6e6e"} size={45} />
+          <h1 className="text-lg text-red-900">
+            Loading data from covid-19 api.
+          </h1>
+        </>
       ) : (
         <>
           {covidStats

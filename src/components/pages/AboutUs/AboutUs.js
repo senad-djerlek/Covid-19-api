@@ -14,6 +14,7 @@ const AboutUs = () => {
       </h3>
       {persons.map((person) => (
         <PersonCard
+          key={person.facebookLink}
           imageURL={person.imageURL}
           name={person.name}
           occupation={person.occupation}

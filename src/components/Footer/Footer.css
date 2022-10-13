@@ -1,15 +1,14 @@
 .footerlink:hover {
-    color: red;
-    transition: 0.1s;
-
+  color: #ff0000;
+  transition: 0.1s;
 }
 
 .icons {
-    transition: 0.5s;
+  transition: 0.5s;
 }
 
 .icons:hover {
-    transform: scale(2);
-    color: rgb(239, 110, 110);
-    transition: 0.2s;
+  transform: scale(2);
+  color: #ef6e6e;
+  transition: 0.2s;
 }
