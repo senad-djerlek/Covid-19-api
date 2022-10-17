@@ -15,7 +15,7 @@ export default function StateCard({
     <div className="  w-2/3  shadow-xl rounded p-4 ml-auto mr-auto mt-2 mb-2 grid grid-flow-row auto-rows-max bg-slate-50">
       <div className=" bg-white flex flex-col justify-center items-center row-span-1 p-2 rounded-md">
         <div className=" flex justify-center gap-1 items-center bg-white rounded-md m-1 p-3">
-          <img src={a} className=" w-14 opacity-75 block" />{" "}
+          <img src={a} className=" w-14 opacity-75 block" alt="border" />{" "}
           <div className="  flex  items-baseline ">
             <h2 className=" font-bold text-2xl text-gray-600">{countryName}</h2>
           </div>

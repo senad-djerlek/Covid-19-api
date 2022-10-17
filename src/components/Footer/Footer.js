@@ -13,13 +13,14 @@ const Footer = () => {
           <a
             href="https://www.facebook.com/OfficialNHSCOVID19app"
             target="_blank"
+            rel="noreferrer"
           >
             <FacebookIcon className="icons" />
           </a>
-          <a href="https://www.instagram.com/nhs/" target="_blank">
+          <a href="https://www.instagram.com/nhs/" target="_blank" rel="noreferrer">
             <InstagramIcon className="icons" />
           </a>
-          <a href="https://twitter.com/nhscovid19app" target="_blank">
+          <a href="https://twitter.com/nhscovid19app" target="_blank" rel="noreferrer">
             <TwitterIcon className="icons" />
           </a>
         </div>

@@ -14,7 +14,7 @@ const justDay =
 const justMonth =
   new Date().getMonth() >= 10
     ? new Date().getMonth()
-    : new Date().getMonth() == 9
+    : new Date().getMonth() === 9
     ? "10"
     : "0".concat(new Date().getMonth() + 1);
 const onThisDay = new Date().getFullYear() + "-" + justMonth + "-" + justDay;
@@ -45,6 +45,7 @@ function CountryCovidStats() {
     },
     clarifyTimeoutError: false,
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     axios
       .request(options, { date: countryName.date })
