@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { NavLink, Link } from "react-router-dom";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, CardActions } from "@mui/material";
-import { padding, style } from "@mui/system";
+import { NavLink } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import "./HomePage.css";
 
@@ -28,6 +22,7 @@ const HomePage = () => {
       setLoading(false);
     });
   };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getDataCovidStats();
   }, []);
@@ -47,6 +42,7 @@ const HomePage = () => {
             style={{ height: "" }}
             src="https://www.bloomberg.com/graphics/2020-coronavirus-cases-world-map/img/2020-coronavirus-cases-world-map-facebook.png?t=202011091543"
             // style={{ objectFit: "contain" }}
+            alt="background"
           ></img>
           <h1
             className="flex justify-center pb-10 font-bold text-2xl pt-6"

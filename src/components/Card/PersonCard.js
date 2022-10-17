@@ -1,11 +1,5 @@
 import * as React from "react";
 import "./PersonCard.css";
-import Card from "@mui/material/Card";
-import CardHeader from "@mui/material/CardHeader";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import Avatar from "@mui/material/Avatar";
-import Typography from "@mui/material/Typography";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -68,7 +62,7 @@ function PersonCard({
     <div className="container">
       <div className="card">
         <div className="image">
-          <img src={imageURL}></img>
+          <img src={imageURL} alt="image"></img>
           <h3 className="font-bold text-center py-2">{name}</h3>
         </div>
         <div className="content">
@@ -76,16 +70,16 @@ function PersonCard({
           <p>{description}</p>
           <div className="flex justify-evenly mt-5">
             {" "}
-            <a href={facebookLink} target="_blank">
+            <a href={facebookLink} target="_blank" rel="noreferrer">
               <FacebookIcon className="icons-about" />
             </a>
-            <a href={instagramLink} target="_blank">
+            <a href={instagramLink} target="_blank" rel="noreferrer">
               <InstagramIcon className="icons-about" />
             </a>
-            <a href={gitHubLink} target="_blank">
+            <a href={gitHubLink} target="_blank" rel="noreferrer">
               <GitHubIcon className="icons-about" />
             </a>
-            <a href={linkedInLink} target="_blank">
+            <a href={linkedInLink} target="_blank" rel="noreferrer">
               <LinkedInIcon className="icons-about" />
             </a>
           </div>

@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import persons from "../common/persons.json";
 
 const PersonContext = createContext();

@@ -46,7 +46,7 @@ const CovidStats = () => {
   const visitedPerPage = (activePage - 1) * perPage;
 
   const totalPages = Math.ceil(covidStats.length / perPage);
-
+// eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     getDataCovidStats();
   }, []);
