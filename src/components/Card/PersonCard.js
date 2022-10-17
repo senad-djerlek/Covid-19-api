@@ -62,7 +62,7 @@ function PersonCard({
     <div className="container">
       <div className="card">
         <div className="image">
-          <img src={imageURL} alt="image"></img>
+          <img src={imageURL} alt="person"></img>
           <h3 className="font-bold text-center py-2">{name}</h3>
         </div>
         <div className="content">

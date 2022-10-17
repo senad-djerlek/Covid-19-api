@@ -1,6 +1,4 @@
 import "./App.css";
-import axios from "axios";
-import { useEffect, useState } from "react";
 import CovidStats from "./components/pages/CovidStats/CovidStats";
 import { Route, Routes } from "react-router-dom";
 import Homepage from "../src/components/pages/HomePage/HomePage";
