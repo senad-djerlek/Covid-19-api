@@ -57,11 +57,11 @@ const countries = [
   { code: "AD", searchName: "Andorra", label: "Andorra", phone: "376" },
   {
     code: "AE",
-    searchName: "United-Arab-Emirates",
+    searchName: "UAE",
     label: "United Arab Emirates",
     phone: "971",
   },
-  { code: "AF",searchName: "Afghanistan", label: "Afghanistan", phone: "93" },
+  { code: "AF", searchName: "Afghanistan", label: "Afghanistan", phone: "93" },
   {
     code: "AG",
     searchName: "Antigua-and-Barbuda",
