@@ -7,7 +7,7 @@ export default function CountrySelect({ countryNameFunc }) {
   return (
     <Autocomplete
       onChange={(event, value) => {
-        countryNameFunc(value.label, value.code.toLowerCase());
+        countryNameFunc(value.searchName, value.code.toLowerCase());
       }}
       defaultValue={countries.find((el) => el.label === "Serbia")}
       id="country-select-demo"
@@ -54,13 +54,14 @@ export default function CountrySelect({ countryNameFunc }) {
 
 // From https://bitbucket.org/atlassian/atlaskit-mk-2/raw/4ad0e56649c3e6c973e226b7efaeb28cb240ccb0/packages/core/select/src/data/countries.js
 const countries = [
-  { code: "AD", label: "Andorra", phone: "376" },
+  { code: "AD", searchName: "Andorra", label: "Andorra", phone: "376" },
   {
     code: "AE",
+    searchName: "United-Arab-Emirates",
     label: "United Arab Emirates",
     phone: "971",
   },
-  { code: "AF", label: "Afghanistan", phone: "93" },
+  { code: "AF",searchName: "Afghanistan", label: "Afghanistan", phone: "93" },
   {
     code: "AG",
     searchName: "Antigua-and-Barbuda",
