@@ -46,7 +46,6 @@ function CountryCovidStats() {
     clarifyTimeoutError: false,
   };
 
-  //eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     axios
       .request(options, { date: countryName.date })
@@ -97,6 +96,7 @@ function CountryCovidStats() {
         });
       });
     window.scrollTo(0, 0);
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [countryName.name, countryName.date]);
   return (
     <div
