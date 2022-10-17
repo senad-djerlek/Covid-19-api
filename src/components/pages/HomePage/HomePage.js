@@ -22,9 +22,10 @@ const HomePage = () => {
       setLoading(false);
     });
   };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     getDataCovidStats();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   console.log();
